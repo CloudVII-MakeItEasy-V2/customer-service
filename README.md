@@ -1,5 +1,7 @@
 # Cloud computing Project - GroupGrub
 
+You can use this link to view our serview: https://34.75.0.140:8081/swagger-ui/index.html
+
 ## Building and Running a Local Instance
 
 In order to build and use this service you must install the following (This guide assumes Mac but the Maven README has instructions for both Windows and Mac):
