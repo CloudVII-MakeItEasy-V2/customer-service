@@ -1,0 +1,17 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< org.openapitools:openapi-spring >-------------------
+[INFO] Building openapi-spring 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- checkstyle:3.2.0:check (default-cli) @ openapi-spring ---
+[INFO] Starting audit...
+Audit done.
+[INFO] You have 0 Checkstyle violations.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.562 s
+[INFO] Finished at: 2024-11-13T15:15:57-05:00
+[INFO] ------------------------------------------------------------------------

@@ -1,0 +1,17 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< org.openapitools:openapi-spring >-------------------
+[INFO] Building openapi-spring 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- checkstyle:3.2.0:checkstyle (default-cli) @ openapi-spring ---
+[INFO] Rendering content with org.apache.maven.skins:maven-default-skin:jar:1.3 skin.
+[INFO] Starting audit...
+Audit done.
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.795 s
+[INFO] Finished at: 2024-11-13T17:11:02-05:00
+[INFO] ------------------------------------------------------------------------
