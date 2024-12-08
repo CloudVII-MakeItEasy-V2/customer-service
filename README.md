@@ -125,14 +125,3 @@ src/main/java/org/group/customer
 - **SmartyStreets API**: For address validation.
 - **Jakarta Persistence**: For entity modeling.
 
----
-
-## Future Enhancements
-
-- Add OAuth 2.0 support (e.g., Google Login).
-- Implement rate limiting for API endpoints.
-- Extend address validation with more robust error handling.
-
----
-
-Let me know if you'd like to modify or expand this README!
