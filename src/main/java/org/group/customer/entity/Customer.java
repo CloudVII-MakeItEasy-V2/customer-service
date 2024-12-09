@@ -18,7 +18,7 @@ public class Customer {
 
     private String address;
     private String phone;
-    private String passwordHash;
+    private String password;
 
     public int getCustomerId() {
         return customerId;
@@ -60,11 +60,11 @@ public class Customer {
         this.phone = phone;
     }
 
-    public String getPasswordHash() {
-        return passwordHash;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPasswordHash(String passwordHash) {
-        this.passwordHash = passwordHash;
+    public void setPassword(String passwordHash) {
+        this.password = passwordHash;
     }
 }
