@@ -1,7 +1,6 @@
 package org.group.customer.controller;
 
 
-import jakarta.websocket.server.PathParam;
 import org.group.customer.entity.Customer;
 import org.group.customer.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,8 +30,8 @@ public class CustomerController {
 
 
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestParam String email, @RequestParam String passwordHash) {
-        Customer customer = service.login(email, passwordHash);
+    public ResponseEntity<String> login(@RequestParam String email, @RequestParam String password) {
+        Customer customer = service.login(email, password);
         if (customer != null) {
             return ResponseEntity.ok("Login Successful!");
         }

@@ -29,9 +29,9 @@ public class CustomerService {
         return repository.save(customer);
     }
 
-    public Customer login(String email, String passwordHash) {
+    public Customer login(String email, String password) {
         Customer customer = repository.findByEmail(email);
-        if (customer != null && customer.getPasswordHash().equals(passwordHash)) {
+        if (customer != null && customer.getPassword().equals(password)) {
             return customer;
         }
         return null;
