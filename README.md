@@ -1,13 +1,5 @@
 
 
-# Customer Management API
-
-This project provides a RESTful API for managing customer information, including registration, login, and retrieval of customer details. The system integrates validation mechanisms and supports extensibility.
-
-Here's a comprehensive README file for the `CustomerController` API:
-
-------
-
 # Customer API
 
 This is a RESTful API for managing customer data, including features for registration, login, retrieving customer information, and balance extraction.
