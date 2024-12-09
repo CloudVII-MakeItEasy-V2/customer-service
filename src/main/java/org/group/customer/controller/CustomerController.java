@@ -57,10 +57,10 @@ public class CustomerController {
     public ResponseEntity<?> extractBalance(@RequestParam int id,
                                             @RequestParam int extractNum){
         if (!service.existId(id)){
-            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>("extract balance fail",HttpStatus.BAD_REQUEST);
         }
         service.extractBalance(id,extractNum);
-        return new ResponseEntity<>(HttpStatus.OK);
+        return new ResponseEntity<>("extract balance success",HttpStatus.OK);
     }
 
 }
