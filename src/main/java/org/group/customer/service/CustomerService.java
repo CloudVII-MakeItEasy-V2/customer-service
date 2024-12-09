@@ -48,4 +48,13 @@ public class CustomerService {
     public Optional<Customer> findById(int id){
         return repository.findById(id);
     }
+
+    public void extractBalance(int id, int extractNum){
+        Customer customer=repository.findById(id).orElse(null);
+        if (customer==null){
+            return;
+        }
+        customer.setBalance(customer.getBalance()-extractNum);
+        repository.save(customer);
+    }
 }

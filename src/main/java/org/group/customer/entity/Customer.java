@@ -16,6 +16,16 @@ public class Customer {
     @Column(unique = true)
     private String email;
 
+    public int getBalance() {
+        return balance;
+    }
+
+    public void setBalance(int balance) {
+        this.balance = balance;
+    }
+
+    private int balance;
+
     private String address;
     private String phone;
     private String password;

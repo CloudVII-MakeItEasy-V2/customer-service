@@ -53,4 +53,14 @@ public class CustomerController {
         return ResponseEntity.ok(customer);
     }
 
+    @PostMapping("/extractBalance")
+    public ResponseEntity<?> extractBalance(@RequestParam int id,
+                                            @RequestParam int extractNum){
+        if (!service.existId(id)){
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+        service.extractBalance(id,extractNum);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
 }
