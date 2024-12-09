@@ -18,24 +18,25 @@ public class CustomerController {
     private CustomerService service;
 
     @PostMapping("/register")
-    public ResponseEntity<?> register(@RequestBody Customer customer) {
+    public ResponseEntity<Customer> register(@RequestBody Customer customer) {
         Customer savedCustomer = service.registerCustomer(customer);
         if (savedCustomer == null) {
             return ResponseEntity
                     .status(HttpStatus.BAD_REQUEST)
-                    .body("Customer registration failed due to invalid input or business logic.");
+                    .body(null);
         }
         return ResponseEntity.ok(savedCustomer);
     }
 
 
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestParam String email, @RequestParam String password) {
+    public ResponseEntity<Customer> login(@RequestParam String email,
+                                   @RequestParam String password) {
         Customer customer = service.login(email, password);
-        if (customer != null) {
-            return ResponseEntity.ok("Login Successful!");
+        if (customer == null) {
+            return ResponseEntity.ok(null);
         }
-        return ResponseEntity.status(401).body("Invalid credentials");
+        return ResponseEntity.ok(customer);
     }
 
     @GetMapping("/getAllCustomers")
