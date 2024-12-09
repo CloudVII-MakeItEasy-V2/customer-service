@@ -1,71 +1,132 @@
 
 
-# Customer Management API
+# Customer API
 
-This project provides a RESTful API for managing customer information, including registration, login, and retrieval of customer details. The system integrates validation mechanisms and supports extensibility.
+This is a RESTful API for managing customer data, including features for registration, login, retrieving customer information, and balance extraction.
 
----
+## Base URL
 
-## Features
-
-- **Customer Registration**: Securely register new customers with validations.
-- **Login System**: Support for email/password login.
-- **Customer Retrieval**: Fetch details of all customers or by specific ID.
-- **Validation**: Address validation using SmartyStreets API.
-
----
-
-## API Endpoints
-
-### **Customer Operations**
-| HTTP Method | Endpoint                        | Description                       | Parameters (if any)               |
-|-------------|----------------------------------|-----------------------------------|------------------------------------|
-| `POST`      | `/api/customers/register`       | Register a new customer.          | Body: `Customer` JSON object       |
-| `POST`      | `/api/customers/login`          | Login using email and password.   | `email`, `passwordHash` (query)    |
-| `GET`       | `/api/customers/getAllCustomers`| Retrieve all registered customers.| None                               |
-| `GET`       | `/api/customers/getInformationById/{id}` | Get customer details by ID. | Path Variable: `id`               |
-
-### **Request and Response Examples**
-
-#### **Customer Registration**
-- **Request**:
-```json
-POST /api/customers/register
-Content-Type: application/json
-
-{
-  "name": "John Doe",
-  "email": "johndoe@example.com",
-  "address": "123 Main St, Springfield",
-  "phone": "555-1234",
-  "passwordHash": "hashedPassword123"
-}
 ```
-- **Response**:
+/api/customers
+```
+
+## Endpoints
+
+### 1. Register a Customer
+
+**Endpoint:**
+ `POST /register`
+
+**Description:**
+ Registers a new customer.
+
+**Request Body:**
+
 ```json
-200 OK
 {
-  "customerId": 1,
-  "name": "John Doe",
-  "email": "johndoe@example.com",
-  "address": "123 Main St, Springfield",
-  "phone": "555-1234",
-  "passwordHash": "hashedPassword123"
+  "name": "string",
+  "email": "string",
+  "password": "string",
+  "balance": "number"
 }
 ```
 
-#### **Login**
-- **Request**:
-```http
-POST /api/customers/login?email=johndoe@example.com&passwordHash=hashedPassword123
-```
-- **Response**:
-```json
-200 OK
-"Login Successful!"
-```
+**Response:**
 
----
+- **200 OK:** Returns the registered customer object.
+- **400 Bad Request:** Customer registration failed due to invalid input or business logic.
+
+------
+
+### 2. Customer Login
+
+**Endpoint:**
+ `POST /login`
+
+**Description:**
+ Logs in a customer using email and password.
+
+**Request Parameters:**
+
+- `email` (string): Customer's email address.
+- `password` (string): Customer's password.
+
+**Response:**
+
+- **200 OK:** `Login Successful!`
+- **401 Unauthorized:** `Invalid credentials`
+
+------
+
+### 3. Get All Customers
+
+**Endpoint:**
+ `GET /getAllCustomers`
+
+**Description:**
+ Retrieves a list of all customers.
+
+**Response:**
+
+- **200 OK:** Returns a list of customer objects.
+
+------
+
+### 4. Get Customer Information by ID
+
+**Endpoint:**
+ `GET /getInformationById/{id}`
+
+**Description:**
+ Fetches customer information by their ID.
+
+**Path Variable:**
+
+- `id` (integer): ID of the customer.
+
+**Response:**
+
+- **200 OK:** Returns the customer object if found.
+- **404 Not Found:** Returns an empty customer object if the ID does not exist.
+
+------
+
+### 5. Extract Balance
+
+**Endpoint:**
+ `POST /extractBalance`
+
+**Description:**
+ Extracts a specific amount from a customer's balance.
+
+**Request Parameters:**
+
+- `id` (integer): ID of the customer.
+- `extractNum` (integer): Amount to be extracted.
+
+**Response:**
+
+- **200 OK:** Balance extraction was successful.
+- **400 Bad Request:** The customer ID does not exist.
+
+------
+
+## Dependencies
+
+This API uses:
+
+- **Spring Boot** for REST API development.
+- **HTTP Status Codes** to represent success or failure of operations.
+
+## Notes
+
+1. Ensure the database schema aligns with the `Customer` entity class.
+2. Validate inputs on the client side to minimize bad requests.
+3. Consider adding authentication/authorization for production.
+
+------
+
+Feel free to update or expand upon this README based on your project's specific requirements or additional features.
 
 ## Address Validation
 
