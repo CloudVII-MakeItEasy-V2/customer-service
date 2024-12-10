@@ -18,16 +18,18 @@ This is a RESTful API for managing customer data, including features for registr
  `POST /register`
 
 **Description:**
- Registers a new customer.
+ Registers a new customer. The adresss should follow format:https://www.smarty.com/products/single-address
 
-**Request Body:**
+**Example Request Body:**
 
 ```json
 {
-  "name": "string",
-  "email": "string",
-  "password": "string",
-  "balance": "number"
+    "email":"capsfly8@gmail.com",
+    "name":"chyu",
+    "phone":"18888",
+    "passwrod":"sy",
+    "balance":1555555,
+    "address":"16701 SW 72nd Ave Palmetto Bay FL 33157"
 }
 ```
 
@@ -42,6 +44,10 @@ This is a RESTful API for managing customer data, including features for registr
 
 **Endpoint:**
  `POST /login`
+
+### example
+
+`34.75.92.147:8081/api/customers/login?email=jane.smith@example.com&password=321`
 
 **Description:**
  Logs in a customer using email and password.
@@ -77,6 +83,10 @@ This is a RESTful API for managing customer data, including features for registr
 **Endpoint:**
  `GET /getInformationById/{id}`
 
+### example
+
+`34.75.92.147:8081/api/customers/getInformationById/1`
+
 **Description:**
  Fetches customer information by their ID.
 
@@ -95,6 +105,10 @@ This is a RESTful API for managing customer data, including features for registr
 
 **Endpoint:**
  `POST /extractBalance`
+
+### example
+
+`34.75.92.147:8081/api/customers/extractBalance?id=1&extractNum=15`
 
 **Description:**
  Extracts a specific amount from a customer's balance.
